@@ -4,19 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bikers Zone With DaisyUi</title>
+    <!-- google font cdn link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Daisy Ui CDN Link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind custom styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bike-primary': '#E76F51',
+                        'bike-primary-bg': 'rgba(231, 111, 81, 0.10)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- css custom styles -->
+    <style>
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="font-poppins">
     <!-- header area starts here -->
-    <header>
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+    <header class="md:container md:mx-auto">
+
+        <!-- nav area starts-->
+        <nav>
+            <div class="navbar bg-base-100 hello">
+                <div class="flex-1">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li href="#">
+                            <a href="#">Shop</a>
+                        </li>
+                        <li href="#">
+                            <a href="#">News</a>
+                        </li>
+                        <li href="#">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-xl">Biker Zone</a>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1 text-base">
                     <li>
                         <a href="#">Home</a>
                     </li>
@@ -29,35 +75,109 @@
                     <li href="#">
                         <a href="#">Contact</a>
                     </li>
-                </ul>
+                  </ul>
+                </div>
+                <div class="">
+                  <a class="btn bg-bike-primary text-white px-12 text-xl">Login</a>
+                </div>
+            </div>
+        </nav>
+        <!-- nav area ends -->
+
+        <!-- slider or carousel section starts -->
+        <section>
+            <div class="carousel w-full lg:h-[550px] bg-bike-primary-bg">
+                <!-- slide 1 -->
+                <div id="slide1" class="carousel-item relative w-full">
+                  <div class="flex flex-col lg:flex-row gap-20 p-4 lg:p-24">
+                    <div class="space-y-7 flex-1">
+                        <h2 class="text-6xl font-bold">ARCHI Handlebar Super Bike</h2>
+                        <p>Amet minim mollit non deserunt ullamco 
+                            est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <button class="btn bg-bike-primary text-white">Purchase</button>
+                    </div>
+                    <div class="flex-1">
+                        <img src="images/slider/bike-1.png" class="w-[400px]" />
+                    </div>
+                  </div>
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" class="btn btn-circle">❮</a> 
+                    <a href="#slide2" class="btn btn-circle">❯</a>
+                  </div>
+                </div>
+
+                <!-- slide 2 -->
+                <div id="slide2" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row gap-20 p-4 lg:p-24">
+                        <div class="space-y-7 flex-1">
+                            <h2 class="text-3xl lg:text-6xl font-bold">Ducati Monster 1100 Evo Special</h2>
+                            <p>Amet minim mollit non deserunt ullamco 
+                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                            <button class="btn bg-bike-primary text-white">Purchase</button>
+                        </div>
+                        <div class="flex-1">
+                            <img src="images/slider/bike-2.png" class="w-[400px]" />
+                        </div>
+                      </div>
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">❮</a> 
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+
+                <!-- slide 3 -->
+                <div id="slide3" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row gap-20 p-4 lg:p-24">
+                        <div class="space-y-7 flex-1">
+                            <h2 class="text-3xl lg:text-6xl font-bold">Suzuki 750 GSX-R 2006</h2>
+                            <p>Amet minim mollit non deserunt ullamco 
+                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                            <button class="btn bg-bike-primary text-white">Purchase</button>
+                        </div>
+                        <div class="flex-1">
+                            <img src="images/slider/bike-3.png" class="w-[400px]" />
+                        </div>
+                      </div>
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">❮</a> 
+                    <a href="#slide4" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+
+                <!-- slide 4 -->
+                <div id="slide4" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row gap-20 p-4 lg:p-24">
+                        <div class="space-y-7 flex-1">
+                            <h2 class="text-3xl lg:text-6xl font-bold"> 2022 LiveWire-ELW Live Wire ONE</h2>
+                            <p>Amet minim mollit non deserunt ullamco 
+                                est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                            <button class="btn bg-bike-primary text-white">Purchase</button>
+                        </div>
+                        <div class="flex-1">
+                            <img src="images/slider/bike-4.png" class="w-[400px]" />
+                        </div>
+                      </div>
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">❮</a> 
+                    <a href="#slide1" class="btn btn-circle">❯</a>
+                  </div>
+                </div>
               </div>
-              <a class="btn btn-ghost text-xl">Biker Zone</a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-              <ul class="menu menu-horizontal px-1">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li href="#">
-                    <a href="#">Shop</a>
-                </li>
-                <li href="#">
-                    <a href="#">News</a>
-                </li>
-                <li href="#">
-                    <a href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
-            <div class="navbar-end">
-              <a class="btn btn-error">Login</a>
-            </div>
-          </div>
+        </section>
+        <!-- slider or carousel section ends -->
     </header>
     <!-- header ares ends here -->
 
     <!-- main area starts here -->
-    <main>
+    <main class="md:container md:mx-auto">
+        
+        <!-- Featured bikes area starts here-->
+        <section>
+
+        </section>
+        <!-- Featured bikes area ends here-->
+
+       
 
     </main>
     <!-- main area ends here -->
